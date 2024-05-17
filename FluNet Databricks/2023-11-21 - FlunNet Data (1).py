@@ -137,19 +137,6 @@ temp_table_name = "Flunet_csv"
 
 # COMMAND ----------
 
-# Assuming you have a Spark DataFrame called 'df' with the first row as column names
-
-# Get the first row as a list
-first_row = df.first()
-
-# Rename columns using toDF and pass the list as new column names
-df = df.toDF(*first_row)
-
-# Show the DataFrame with renamed columns
-df.show()
-
-# COMMAND ----------
-
 # With this registered as a temp view, it will only be available to this particular notebook. If you'd like other users to be able to query this table, you can also create a table from the DataFrame.
 # Once saved, this table will persist across cluster restarts as well as allow various users across different notebooks to query this data.
 # To do so, choose your table name and uncomment the bottom line.
